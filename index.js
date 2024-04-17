@@ -13,6 +13,13 @@ const app = express();
 
 // Middleware to enable CORS
 app.use(cors());
+app.use(
+  cors({
+    origin: ["https://vermillion-raindrop-93f9e3.netlify.app"],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    // credentials: true,
+  })
+);
 // Middleware to parse JSON bodies
 app.use(express.json());
 
